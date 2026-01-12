@@ -1,0 +1,58 @@
+.project {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-section-sm);
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-base);
+    position: sticky;
+    top: var(--sp-large);
+    height: fit-content;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-base);
+    border-bottom: 0.1rem solid var(--gray);
+    padding-bottom: var(--sp-base);
+  }
+
+  &__tags {
+    display: flex;
+    flex-direction: row;
+    gap: var(--sp-small);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-small);
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    gap: var(--sp-small);
+    justify-content: flex-end;
+    margin-bottom: var(--sp-base);
+
+    position: sticky;
+    top: var(--sp-large);
+  }
+
+  &__images {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-base);
+
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--rd-small);
+    }
+  }
+}

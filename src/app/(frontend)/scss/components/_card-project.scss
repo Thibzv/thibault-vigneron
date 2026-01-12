@@ -1,0 +1,96 @@
+.card-project {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-regular);
+  will-change: transform;
+  position: relative;
+
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+  &__caption {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  &__window {
+    border: 0.1rem solid var(--black);
+    border-radius: var(--rd-tiny);
+    position: relative;
+    z-index: 1;
+    background-color: var(--white-100);
+  }
+
+  &__topbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.1rem solid var(--black);
+
+    height: 3.5rem;
+    padding: 0 var(--sp-small);
+    font-size: var(--fs-small);
+    color: var(--black);
+
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+    &::before {
+      content: '';
+      height: 0.8rem;
+      width: 3.2rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 32 8'%3E%3Cpath fill='%23FF5C60' d='M0 4a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z'/%3E%3Cpath fill='%23FAC800' d='M12 4a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z'/%3E%3Cpath fill='%2335C759' d='M24 4a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z'/%3E%3C/svg%3E");
+    }
+  }
+
+  &__thumb {
+    display: grid;
+    place-items: center;
+
+    height: 32rem;
+    width: 100%;
+
+    & > img {
+      max-height: 9rem;
+    }
+  }
+
+  &__discover {
+    font-size: var(--fs-small);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--sp-tiny);
+    color: var(--black);
+
+    & > span {
+      rotate: -45deg;
+      font-size: 1rem;
+    }
+  }
+
+  &--min {
+    pointer-events: none;
+
+    .card-project__caption,
+    .card-project__topbar > p {
+      opacity: 0;
+    }
+  }
+
+  &:not(.card-project--min) {
+    &:hover {
+      transform: scale(1.05);
+
+      .card-project__caption,
+      .card-project__topbar {
+        opacity: 0;
+      }
+    }
+  }
+}

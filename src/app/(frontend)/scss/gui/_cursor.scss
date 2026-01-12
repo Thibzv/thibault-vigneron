@@ -1,0 +1,17 @@
+.cursor {
+  position: fixed;
+  top: -0.8rem;
+  left: -0.8rem;
+  width: 1.6rem;
+  aspect-ratio: 1;
+  border-radius: var(--rd-full);
+  background-color: var(--white-50);
+  z-index: 200;
+
+  mix-blend-mode: difference;
+  backdrop-filter: blur(0.4rem);
+  pointer-events: none;
+
+  transition: width 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+    transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}

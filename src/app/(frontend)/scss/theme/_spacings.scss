@@ -1,0 +1,15 @@
+:root {
+  --sp-section-lg: 14rem;
+  --sp-section-sm: 8rem;
+
+  --sp-extra: 5rem;
+  --sp-large: 4rem;
+  --sp-medium: 3.2rem;
+  --sp-base: 2.4rem;
+  --sp-regular: 1.6rem;
+  --sp-small: 1.2rem;
+  --sp-tiny: 0.8rem;
+
+  --wr-nav: clamp(var(--sp-base), calc(50vw - 70rem), 100%);
+  --wr-base: clamp(var(--sp-base), calc(50vw - 64rem), 100%);
+}

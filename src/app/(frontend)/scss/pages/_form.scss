@@ -1,0 +1,102 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-regular);
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(0.4rem);
+  }
+
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    background-color: var(--white-100);
+    border-radius: var(--rd-large);
+    padding: var(--sp-regular);
+    max-width: 90rem;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    pointer-events: auto;
+  }
+
+  &__close {
+    position: absolute;
+    top: var(--sp-regular);
+    right: var(--sp-regular);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: var(--rd-full);
+    background-color: var(--white-100);
+    border: 0.1rem solid var(--gray);
+    color: var(--black);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: var(--gray);
+    }
+  }
+
+  &__title {
+    margin-bottom: var(--sp-regular);
+  }
+
+  &__text {
+    color: var(--black);
+  }
+}
+
+.project-page {
+  min-height: 100vh;
+  padding: var(--sp-section-lg) var(--wr-base);
+
+  &__container {
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+  &__back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-base);
+    margin-bottom: var(--sp-large);
+    color: var(--black);
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+
+  &__title {
+    margin-bottom: var(--sp-regular);
+  }
+
+  &__text {
+    color: var(--black);
+  }
+}

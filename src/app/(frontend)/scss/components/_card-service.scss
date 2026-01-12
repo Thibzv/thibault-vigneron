@@ -1,0 +1,30 @@
+.card-service {
+  min-height: 35rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-regular);
+  padding: var(--sp-base);
+  border: 0.1rem solid var(--gray);
+  border-radius: var(--rd-small);
+
+  & > p {
+    font-size: var(--fs-small);
+  }
+
+  & > .heading {
+    text-wrap: balance;
+  }
+
+  &__icon {
+    display: grid;
+    place-items: center;
+    height: 5rem;
+    aspect-ratio: 1;
+    width: fit-content;
+    background-color: var(--primary);
+    border-radius: var(--rd-full);
+    color: var(--white-100);
+    margin-bottom: auto;
+  }
+}

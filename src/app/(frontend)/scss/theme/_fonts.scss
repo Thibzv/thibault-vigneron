@@ -1,0 +1,68 @@
+:root {
+  --ff: "Plus Jakarta Sans";
+
+  --fs-huge: 6rem;
+  --fs-extra: 4.2rem;
+  --fs-large: 3rem;
+  --fs-medium: 2.4rem;
+
+  --ff-base: 1.6rem;
+  --fs-small: 1.4rem;
+  --fs-tiny: 1.2rem;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 600;
+  --fw-semibold: 700;
+  --fw-extrabold: 800;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../../assets/plus-jakarta-sans-v12-latin-300.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/plus-jakarta-sans-v12-latin-regular.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../assets/plus-jakarta-sans-v12-latin-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../../assets/plus-jakarta-sans-v12-latin-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../assets/plus-jakarta-sans-v12-latin-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../../assets/plus-jakarta-sans-v12-latin-800.woff2") format("woff2");
+}

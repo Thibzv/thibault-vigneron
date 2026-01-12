@@ -1,0 +1,146 @@
+.modal {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: 150;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 var(--wr-base);
+
+  opacity: 0;
+  animation: modal-fade-in 0.3s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+
+  &__overlay {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(0.4rem);
+    cursor: pointer;
+  }
+
+  &__content {
+    border-radius: var(--rd-medium) var(--rd-medium) 0 0;
+    background-color: var(--white-100);
+    padding: var(--sp-large);
+    width: 100%;
+
+    overflow-y: scroll;
+
+    transform: translateY(100%);
+    opacity: 0;
+    animation: modal-slide-up 0.3s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  }
+
+  &__close {
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    height: 5.2rem;
+    aspect-ratio: 1;
+    border-radius: var(--rd-full);
+    background-color: var(--white-100);
+    color: var(--black);
+    border: 0.1rem solid var(--gray);
+
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+    &::before {
+      position: absolute;
+      inset: 0rem;
+      z-index: -1;
+
+      display: block;
+      content: '';
+      background-color: var(--primary);
+      border-radius: var(--rd-full);
+
+      transform: scale(0);
+      opacity: 0;
+
+      transition:
+        transform 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+        opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    & > span {
+      transition:
+        transform 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+        opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+      &:last-child {
+        position: absolute;
+        transform: translateX(-5rem);
+        color: var(--white-100);
+        opacity: 0;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.15);
+
+      &::before {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      & > span {
+        &:first-child {
+          transform: translateX(5rem);
+          opacity: 0;
+        }
+
+        &:last-child {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &--contact,
+  &--estimate {
+    .modal__close {
+      margin-left: auto;
+      margin-bottom: var(--sp-large);
+    }
+  }
+
+  &--project {
+    .project__nav {
+      top: 0;
+    }
+
+    .modal__content {
+      max-height: 90vh;
+    }
+  }
+}
+
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

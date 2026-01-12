@@ -1,0 +1,77 @@
+@use '../gui/heading';
+
+.content {
+  & > h1,
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6 {
+    margin-bottom: var(--sp-base);
+    @extend .heading;
+
+    &:not(:first-of-type) {
+      margin-top: var(--sp-extra);
+    }
+  }
+
+  & > h1 {
+    @extend .heading--huge;
+  }
+  & > h2 {
+    @extend .heading--extra;
+  }
+  & > h3 {
+    @extend .heading--large;
+  }
+  & > h4 {
+    @extend .heading--medium;
+  }
+
+  & > p {
+    &:not(:last-child) {
+      margin-bottom: var(--sp-regular);
+    }
+  }
+
+  strong,
+  b {
+    font-weight: var(--fw-semibold);
+  }
+
+  em,
+  i {
+    font-style: italic;
+  }
+
+  ul,
+  ol {
+    padding-left: var(--sp-small);
+    margin-bottom: var(--sp-regular);
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  li {
+    &:not(:last-child) {
+      margin-bottom: var(--sp-tiny);
+    }
+  }
+
+  a {
+    color: var(--primary);
+    text-decoration: underline;
+    text-decoration-thickness: 0.1rem;
+    text-underline-offset: 0.2rem;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

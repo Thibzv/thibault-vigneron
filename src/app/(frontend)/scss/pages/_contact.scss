@@ -1,0 +1,170 @@
+@use "../gui/tag";
+
+.contact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-section-sm);
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-extra);
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-base);
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--sp-base);
+  }
+
+  &__linkedin {
+    font-size: 2rem;
+    color: var(--primary);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-medium);
+  }
+
+  &__infos {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-regular);
+  }
+
+  &__radios {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--sp-small);
+  }
+
+  &__radio {
+    & > input {
+      display: none;
+
+      &:checked + span {
+        border-color: var(--primary);
+        color: var(--primary);
+      }
+    }
+
+    & > span {
+      @extend .tag;
+      cursor: pointer;
+
+      transition: border-color 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+        color 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-regular);
+
+    align-self: flex-end;
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 0.1rem solid var(--gray);
+      padding: var(--sp-regular);
+      color: var(--black);
+      border-radius: var(--rd-tiny);
+
+      &::placeholder {
+        color: var(--black);
+      }
+
+      &[type="file"] {
+        display: none;
+      }
+    }
+
+    & > textarea {
+      height: 20rem;
+      resize: none;
+    }
+  }
+
+  &__rgpd {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--sp-tiny);
+    cursor: pointer;
+
+    font-size: var(--fs-tiny);
+
+    a {
+      color: var(--primary);
+    }
+
+    & > input {
+      appearance: none;
+
+      display: block;
+      border: 0.1rem solid var(--black);
+      width: 1.2rem;
+      height: 1.2rem;
+      border-radius: var(--rd-full);
+      padding: 0;
+      margin: 0;
+
+      &:checked {
+        border-color: var(--primary);
+        background-color: var(--primary);
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-medium);
+
+    & > .button {
+      margin-left: auto;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--sp-base);
+  }
+
+  &__file {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--sp-small);
+    position: relative;
+  }
+
+  &__remove {
+    & > span {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__cols {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-regular);
+  }
+}

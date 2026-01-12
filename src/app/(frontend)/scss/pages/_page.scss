@@ -1,0 +1,25 @@
+.page {
+  padding: var(--sp-section-lg) var(--wr-base);
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-base);
+
+    padding-bottom: var(--sp-extra);
+    border-bottom: 0.1rem solid var(--gray);
+    margin-bottom: var(--sp-extra);
+  }
+
+  &--404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-base);
+
+    & > .button {
+      margin-top: var(--sp-base);
+    }
+  }
+}

@@ -1,0 +1,37 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--ff);
+  font-size: var(--ff-base);
+  font-weight: var(--fw-regular);
+
+  color: var(--black);
+  background-color: var(--white-100);
+  line-height: 1.5;
+}
+
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+button {
+  padding: 0;
+  cursor: pointer;
+}

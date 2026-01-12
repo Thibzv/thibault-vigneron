@@ -1,0 +1,133 @@
+.button {
+  display: flex;
+  width: fit-content;
+  color: var(--color);
+
+  font-weight: var(--fw-medium);
+  position: relative;
+  z-index: 0;
+
+  &__inner {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: var(--sp-tiny);
+
+    border-radius: var(--rd-medium);
+    background-color: var(--background);
+    border: 0.1rem solid var(--border);
+
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    color: var(--color);
+
+    height: calc(3.6rem + var(--sp-tiny) * 2);
+    padding: var(--sp-tiny) var(--sp-regular) var(--sp-tiny)
+      calc(var(--sp-tiny) + 3.6rem + var(--sp-small));
+
+    border-radius: var(--rd-medium);
+  }
+
+  &__icon {
+    display: grid;
+    place-items: center;
+    height: 3.6rem;
+    aspect-ratio: 1;
+    overflow: hidden;
+
+    background-color: var(--background-icon);
+    border-radius: var(--rd-full);
+    font-size: 1.2rem;
+
+    position: relative;
+    z-index: 0;
+
+    &::before {
+      position: absolute;
+      inset: 0.1rem;
+      z-index: -1;
+
+      content: "";
+      display: block;
+      background-color: var(--color-icon);
+      border-radius: var(--rd-full);
+      transform: scale(0);
+      opacity: 0;
+
+      transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+        opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    & > span {
+      transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+        opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+      &:first-child {
+        color: var(--color-icon);
+      }
+
+      &:last-child {
+        position: absolute;
+        transform: translateX(-2rem);
+        opacity: 0;
+        color: var(--color);
+      }
+    }
+  }
+
+  &--primary {
+    --background: var(--primary);
+    --color: var(--white-100);
+    --border: var(--primary);
+
+    --color-icon: var(--primary);
+    --background-icon: var(--color);
+  }
+
+  &--secondary {
+    --background: var(--white-100);
+    --color: var(--primary);
+    --border: var(--white-100);
+
+    --color-icon: var(--white-100);
+    --background-icon: var(--primary);
+  }
+
+  &--border {
+    --border: var(--gray);
+  }
+
+  &:hover {
+    .button__inner {
+      transform: scale(1.1);
+    }
+
+    .button__icon {
+      &::before {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      & > span {
+        &:first-child {
+          transform: translateX(2rem);
+          opacity: 0;
+        }
+
+        &:last-child {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
