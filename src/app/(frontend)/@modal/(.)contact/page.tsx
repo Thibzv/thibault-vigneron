@@ -6,6 +6,8 @@ import Modal from '../Modal'
 import ModalClose from '../ModalClose'
 import Contact from '../../contact/Contact'
 
+export const dynamic = 'force-dynamic'
+
 export default async function ContactModalPage() {
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })

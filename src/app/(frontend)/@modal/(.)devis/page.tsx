@@ -7,6 +7,8 @@ import Modal from '../Modal'
 import ModalClose from '../ModalClose'
 import Estimate from '../../devis/Estimate'
 
+export const dynamic = 'force-dynamic'
+
 export default async function EstimateModalPage() {
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
