@@ -3,7 +3,7 @@ import { getPayload } from 'payload'
 import type { Metadata } from 'next'
 
 import config from '@/payload.config'
-import type { Page } from '@/payload-types'
+import type { Media, Page } from '@/payload-types'
 
 import Heading from '../components/Heading'
 import Content from '../components/Content'
@@ -115,9 +115,13 @@ export default async function DynamicPage({ params }: Props) {
   const pageUrl = `${siteUrl}/${pageSlug}`
 
   // Résoudre l'image pour le Structured Data
+  const pageWithSEO = pageData as Page & {
+    ogImage?: Media | number | null
+  }
+
   let pageImage: string | undefined
-  if (pageData.ogImage && typeof pageData.ogImage !== 'number') {
-    pageImage = pageData.ogImage.url || undefined
+  if (pageWithSEO.ogImage && typeof pageWithSEO.ogImage !== 'number') {
+    pageImage = pageWithSEO.ogImage.url || undefined
   }
   if (pageImage && !pageImage.startsWith('http')) {
     pageImage = `${siteUrl}${pageImage}`
